@@ -34,10 +34,10 @@ struct InstrumentWidget: View {
                 // MARK: Data from Brokers.
                 HStack() {
                     VStack(alignment:.leading, spacing: 17){
-                        Text("Hourly").font(.system(size: 16))
-                        Text("Daily").font(.system(size: 16))
-                        Text("Monthly").font(.system(size: 16))
-                        Text("All").font(.system(size: 16))
+                        Text("Hour").font(.system(size: 16))
+                        Text("Day").font(.system(size: 16))
+                        Text("Monthly ").font(.system(size: 16))
+                        Text("Annual").font(.system(size: 16))
                         Text("Assets").font(.system(size: 17))
                     }
                     Spacer()

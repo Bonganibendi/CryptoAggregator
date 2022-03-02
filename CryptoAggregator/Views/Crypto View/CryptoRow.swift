@@ -21,11 +21,10 @@ struct CryptoRow: View {
             }
             Spacer()
             VStack(alignment: .leading){
-                Text("+3.56%")
-                Text("Daily")
+                Text("34 548")
+                Text("Price")
                     .foregroundColor(.secondary)
             }
-            
         }
     }
 }
