@@ -21,7 +21,7 @@ struct BaseInstrumentView: View {
                         InstrumentWidget()
                     }
                 }
-            }.navigationTitle("Instruments")
+            }.navigationTitle("Base Instruments")
         }
     }
 }
