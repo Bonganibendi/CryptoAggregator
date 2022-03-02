@@ -18,7 +18,6 @@ struct BaseInstrumentView: View {
                         }
                         InstrumentWidget()
                         InstrumentWidget()
-                        InstrumentWidget()
                     }
                 }
             }.navigationTitle("Instruments")
