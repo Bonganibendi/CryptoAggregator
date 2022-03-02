@@ -11,7 +11,7 @@ import SwiftUI
 struct CryptoAggregatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
