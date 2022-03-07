@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TabBarView: View {
     var body: some View {
-        TabView {
-            BaseInstrumentView().tabItem{
+        TabView {            
+            CryptoMarketView().tabItem {
                 Label("",systemImage: "building.columns.fill")
             }
             

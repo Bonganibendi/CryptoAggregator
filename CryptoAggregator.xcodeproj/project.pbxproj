@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F28A3CA027D3F5F20030B653 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A3C9F27D3F5F20030B653 /* CryptoViewModel.swift */; };
+		F28A3CA227D3F70B0030B653 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A3CA127D3F70B0030B653 /* CryptoModel.swift */; };
 		F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */; };
 		F2A296C127CFA10C00A229CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C027CFA10C00A229CE /* Assets.xcassets */; };
 		F2A296C427CFA10C00A229CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C327CFA10C00A229CE /* Preview Assets.xcassets */; };
 		F2A296CD27CFA1A100A229CE /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296CC27CFA1A100A229CE /* TabBarView.swift */; };
-		F2A296D027CFA20500A229CE /* BaseInstrumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296CF27CFA20500A229CE /* BaseInstrumentView.swift */; };
-		F2A296D427CFA27D00A229CE /* InstrumentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296D327CFA27D00A229CE /* InstrumentWidget.swift */; };
 		F2A296D627CFA2C200A229CE /* CryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296D527CFA2C200A229CE /* CryptoView.swift */; };
-		F2A296D827CFA2CB00A229CE /* AddCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296D727CFA2CB00A229CE /* AddCryptoView.swift */; };
-		F2A296DA27CFA2D900A229CE /* CryptoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296D927CFA2D900A229CE /* CryptoRow.swift */; };
 		F2A296DD27CFA3A600A229CE /* Crypto Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */; };
 		F2A296E227CFA3D800A229CE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E127CFA3D800A229CE /* SettingsView.swift */; };
 		F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E327CFA40500A229CE /* UserWidget.swift */; };
@@ -23,19 +21,18 @@
 		F2A296E827CFA43100A229CE /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E727CFA43100A229CE /* PasswordView.swift */; };
 		F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E927CFA44B00A229CE /* HelpView.swift */; };
 		F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296EB27CFA46F00A229CE /* LogoutView.swift */; };
+		F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F28A3C9F27D3F5F20030B653 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
+		F28A3CA127D3F70B0030B653 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		F2A296B927CFA10B00A229CE /* CryptoAggregator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAggregator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAggregatorApp.swift; sourceTree = "<group>"; };
 		F2A296C027CFA10C00A229CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2A296C327CFA10C00A229CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2A296CC27CFA1A100A229CE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		F2A296CF27CFA20500A229CE /* BaseInstrumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInstrumentView.swift; sourceTree = "<group>"; };
-		F2A296D327CFA27D00A229CE /* InstrumentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentWidget.swift; sourceTree = "<group>"; };
 		F2A296D527CFA2C200A229CE /* CryptoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoView.swift; sourceTree = "<group>"; };
-		F2A296D727CFA2CB00A229CE /* AddCryptoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCryptoView.swift; sourceTree = "<group>"; };
-		F2A296D927CFA2D900A229CE /* CryptoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoRow.swift; sourceTree = "<group>"; };
 		F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crypto Detail.swift"; sourceTree = "<group>"; };
 		F2A296E127CFA3D800A229CE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F2A296E327CFA40500A229CE /* UserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWidget.swift; sourceTree = "<group>"; };
@@ -43,6 +40,7 @@
 		F2A296E727CFA43100A229CE /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		F2A296E927CFA44B00A229CE /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		F2A296EB27CFA46F00A229CE /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F27606A527D27F5900019A18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F28A3CA127D3F70B0030B653 /* CryptoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F28A3C9E27D3F5CE0030B653 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F28A3C9F27D3F5F20030B653 /* CryptoViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		F2A296B027CFA10B00A229CE = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */,
+				F27606A527D27F5900019A18 /* Models */,
+				F28A3C9E27D3F5CE0030B653 /* View Models */,
 				F2A296CA27CFA12300A229CE /* Views */,
 				F2A296C027CFA10C00A229CE /* Assets.xcassets */,
 				F2A296C227CFA10C00A229CE /* Preview Content */,
@@ -95,31 +111,20 @@
 			isa = PBXGroup;
 			children = (
 				F2A296CC27CFA1A100A229CE /* TabBarView.swift */,
-				F2A296CB27CFA12A00A229CE /* Base Instrument */,
-				F2A296CE27CFA1C900A229CE /* Crypto View */,
+				F2A298C427D50221007D0FA4 /* Crypto Market Views */,
+				F2A296CE27CFA1C900A229CE /* Crypto Views */,
+				F2D8494627D5478D00E3D484 /* Detail View */,
 				F2A296DB27CFA36200A229CE /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F2A296CB27CFA12A00A229CE /* Base Instrument */ = {
-			isa = PBXGroup;
-			children = (
-				F2A296CF27CFA20500A229CE /* BaseInstrumentView.swift */,
-				F2A296D327CFA27D00A229CE /* InstrumentWidget.swift */,
-			);
-			path = "Base Instrument";
-			sourceTree = "<group>";
-		};
-		F2A296CE27CFA1C900A229CE /* Crypto View */ = {
+		F2A296CE27CFA1C900A229CE /* Crypto Views */ = {
 			isa = PBXGroup;
 			children = (
 				F2A296D527CFA2C200A229CE /* CryptoView.swift */,
-				F2A296D727CFA2CB00A229CE /* AddCryptoView.swift */,
-				F2A296D927CFA2D900A229CE /* CryptoRow.swift */,
-				F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */,
 			);
-			path = "Crypto View";
+			path = "Crypto Views";
 			sourceTree = "<group>";
 		};
 		F2A296DB27CFA36200A229CE /* Settings */ = {
@@ -133,6 +138,22 @@
 				F2A296E327CFA40500A229CE /* UserWidget.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		F2A298C427D50221007D0FA4 /* Crypto Market Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */,
+			);
+			path = "Crypto Market Views";
+			sourceTree = "<group>";
+		};
+		F2D8494627D5478D00E3D484 /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */,
+			);
+			path = "Detail View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,19 +227,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */,
-				F2A296D827CFA2CB00A229CE /* AddCryptoView.swift in Sources */,
+				F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */,
 				F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */,
 				F2A296CD27CFA1A100A229CE /* TabBarView.swift in Sources */,
 				F2A296E827CFA43100A229CE /* PasswordView.swift in Sources */,
 				F2A296DD27CFA3A600A229CE /* Crypto Detail.swift in Sources */,
 				F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */,
 				F2A296E627CFA41E00A229CE /* EmailView.swift in Sources */,
-				F2A296DA27CFA2D900A229CE /* CryptoRow.swift in Sources */,
 				F2A296E227CFA3D800A229CE /* SettingsView.swift in Sources */,
-				F2A296D427CFA27D00A229CE /* InstrumentWidget.swift in Sources */,
-				F2A296D027CFA20500A229CE /* BaseInstrumentView.swift in Sources */,
 				F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */,
 				F2A296D627CFA2C200A229CE /* CryptoView.swift in Sources */,
+				F28A3CA227D3F70B0030B653 /* CryptoModel.swift in Sources */,
+				F28A3CA027D3F5F20030B653 /* CryptoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
