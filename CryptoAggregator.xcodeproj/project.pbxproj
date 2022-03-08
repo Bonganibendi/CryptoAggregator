@@ -20,6 +20,8 @@
 		F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E927CFA44B00A229CE /* HelpView.swift */; };
 		F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296EB27CFA46F00A229CE /* LogoutView.swift */; };
 		F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */; };
+		F2CFA2E127D79CB100BBC405 /* MarketWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */; };
+		F2CFA2E327D79FC100BBC405 /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFA2E227D79FC100BBC405 /* MarketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		F2A296E927CFA44B00A229CE /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		F2A296EB27CFA46F00A229CE /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketView.swift; sourceTree = "<group>"; };
+		F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketWidget.swift; sourceTree = "<group>"; };
+		F2CFA2E227D79FC100BBC405 /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				F28A3CA127D3F70B0030B653 /* CryptoModel.swift */,
+				F2CFA2E227D79FC100BBC405 /* MarketModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */,
+				F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */,
 			);
 			path = "Crypto Market Views";
 			sourceTree = "<group>";
@@ -228,6 +234,8 @@
 				F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */,
 				F2A296E227CFA3D800A229CE /* SettingsView.swift in Sources */,
 				F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */,
+				F2CFA2E127D79CB100BBC405 /* MarketWidget.swift in Sources */,
+				F2CFA2E327D79FC100BBC405 /* MarketModel.swift in Sources */,
 				F2A296D627CFA2C200A229CE /* CryptoView.swift in Sources */,
 				F28A3CA227D3F70B0030B653 /* CryptoModel.swift in Sources */,
 				F28A3CA027D3F5F20030B653 /* CryptoViewModel.swift in Sources */,

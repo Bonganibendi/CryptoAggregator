@@ -29,7 +29,10 @@ struct CryptoViewUSD: View {
                                     .foregroundColor(.secondary)
                             }
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            
                         }
                     }
                 }
@@ -37,7 +40,6 @@ struct CryptoViewUSD: View {
                 viewModel.fetchCryptoData()
             }
         }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
-        
     }
 }
 

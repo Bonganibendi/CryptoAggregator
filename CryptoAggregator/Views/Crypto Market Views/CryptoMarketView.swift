@@ -12,140 +12,60 @@ struct CryptoMarketView: View {
     
     var body: some View {
         NavigationView {
-            
-            List{
-                
-                  //MARK: USD
-                  NavigationLink(destination: CryptoViewUSD()) {
-                      HStack {
-                          Image("USD").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("USD Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: EUR
-                  NavigationLink(destination: CryptoViewEUR()) {
-                      HStack {
-                          Image("EUR").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("EUR Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: AUD
-                  NavigationLink(destination: CryptoViewAUD()) {
-                      HStack {
-                          Image("AUD").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("AUD Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: SGP
-                  NavigationLink(destination:CryptoViewSGD())  {
-                      HStack {
-                          Image("SGP").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("SGP Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: BRL
-                  NavigationLink(destination: CryptoViewBRL()) {
-                      HStack {
-                          Image("BRL").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("BRL Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: ZAR
-                  NavigationLink(destination: CryptoViewZAR()) {
-                      HStack {
-                          Image("ZAR").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("ZAR Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: INR
-                  NavigationLink(destination: CryptoViewINR()) {
-                      HStack {
-                          Image("INR").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("INR Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: JPY
-                  NavigationLink(destination: CryptoViewJPY()) {
-                      HStack {
-                          Image("JPY").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("JPY Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: XAU
-                  NavigationLink(destination: CryptoViewXAU()) {
-                      HStack {
-                          Image("XAU").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("XAU Market")
-                          
-                          Spacer()
-                      }
-                  }
-                  //MARK: XAG
-                  NavigationLink(destination: CryptoViewXAG()) {
-                      HStack {
-                          Image("XAG").resizable()
-                              .aspectRatio(contentMode: .fill)
-                              .frame(width: 40, height: 40)
-                              .cornerRadius(10)
-                          
-                          Text("XAG Market")
-                          
-                          Spacer()
-                      }
-                  }
-               .navigationTitle("Market View")
+            ScrollView {
+                VStack(spacing: -10){
+                    //MARK: USD
+                    NavigationLink(destination: CryptoViewUSD()) {
+                        MarketWidget(markets: marketData[0])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: EUR
+                    NavigationLink(destination: CryptoViewEUR()) {
+                        MarketWidget(markets: marketData[1])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: AUD
+                    NavigationLink(destination: CryptoViewAUD()) {
+                        MarketWidget(markets: marketData[2])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: SGP
+                    NavigationLink(destination:CryptoViewSGD())  {
+                        MarketWidget(markets: marketData[3])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: BRL
+                    NavigationLink(destination: CryptoViewBRL()) {
+                        MarketWidget(markets: marketData[4])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: ZAR
+                    NavigationLink(destination: CryptoViewZAR()) {
+                        MarketWidget(markets: marketData[5])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: INR
+                    NavigationLink(destination: CryptoViewINR()) {
+                        MarketWidget(markets: marketData[6])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: JPY
+                    NavigationLink(destination: CryptoViewJPY()) {
+                        MarketWidget(markets: marketData[7])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: XAU
+                    NavigationLink(destination: CryptoViewXAU()) {
+                        MarketWidget(markets: marketData[8])
+                            .foregroundColor(.black)
+                    }
+                    //MARK: XAG
+                    NavigationLink(destination: CryptoViewXAG()) {
+                        MarketWidget(markets: marketData[9])
+                            .foregroundColor(.black)
+                    }
+                    .navigationTitle("Market View")
+                }
             }
         }
     }
