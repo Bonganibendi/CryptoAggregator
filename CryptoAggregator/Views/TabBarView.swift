@@ -26,7 +26,7 @@ struct TabBarView_Previews: PreviewProvider {
         Group {
             TabBarView()
             TabBarView()
-                .previewDevice("iPhone 13 Pro Max")
+                .previewDevice("iPhone 8")
         }
     }
 }

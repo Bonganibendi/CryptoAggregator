@@ -25,7 +25,7 @@ let marketData = [
     Market(region: "United States", exchange: "NYSE", symbol: "USD", assets: 200, imageName: "USD"),
     Market(region: "Europe", exchange: "ENX", symbol: "EUR", assets: 200, imageName: "EUR"),
     Market(region: "Australia", exchange: "ASX", symbol: "AUD", assets: 200, imageName: "AUD"),
-    Market(region: "Singapore", exchange: "SGX", symbol: "SGP", assets: 200, imageName: "SGP"),
+    Market(region: "Singapore", exchange: "SGX", symbol: "SGD", assets: 200, imageName: "SGD"),
     Market(region: "Brazil", exchange: "B3", symbol: "BRL", assets: 200, imageName: "BRL"),
     Market(region: "South Africa", exchange: "JSE", symbol: "ZAR", assets: 200, imageName: "ZAR"),
     Market(region: "India", exchange: "NSE", symbol: "INR", assets: 200, imageName: "INR"),

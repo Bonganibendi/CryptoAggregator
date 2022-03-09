@@ -10,36 +10,33 @@ import SwiftUI
 //MARK: - CryptoViewUSD
 struct CryptoViewUSD: View {
     @StateObject var viewModel = CryptoViewModelUSD()
-    
     var body: some View {
-        ZStack {
-            List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
-                            
-                            urlImage(urlString: crypto.image!, data: nil)
-                                .frame(width: 40, height: 40)
-                                .cornerRadius(10)
-                            
-                            VStack(alignment: .leading) {
-                                Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+            ZStack {
+                List{
+                    ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                        NavigationLink(destination: CryptoDetail(instrument: crypto)) {
+                            HStack(spacing: 10) {
+                                
+                                urlImage(urlString: crypto.image!, data: nil)
+                                    .frame(width: 40, height: 40)
+                                    .cornerRadius(10)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(crypto.symbol!)
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                }
+                                
+                                Spacer()
+                                
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                             }
-                            Spacer()
-                            
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
-                            
-                            
                         }
                     }
+                }.onAppear {
+                    viewModel.fetchCryptoData()
                 }
-            }.onAppear {
-                viewModel.fetchCryptoData()
-            }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+            }.navigationBarTitle("Cryptocurrencies USD", displayMode: .inline).offset(y: -10)
     }
 }
 
@@ -60,19 +57,20 @@ struct CryptoViewEUR: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies EUR", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -93,19 +91,20 @@ struct CryptoViewAUD: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies AUD", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -126,19 +125,20 @@ struct CryptoViewSGD: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies SGD", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -159,19 +159,20 @@ struct CryptoViewBRL: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies BRL", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -192,19 +193,20 @@ struct CryptoViewZAR: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies ZAR", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -225,19 +227,20 @@ struct CryptoViewINR: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies INR", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -258,19 +261,20 @@ struct CryptoViewJPY: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies JPY", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -291,19 +295,20 @@ struct CryptoViewXAU: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies XAU", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -324,19 +329,20 @@ struct CryptoViewXAG: View {
                             
                             VStack(alignment: .leading) {
                                 Text(crypto.symbol!)
-                                    .fontWeight(.bold)
-                                Text(crypto.name!)
-                                    .foregroundColor(.secondary)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                             }
+                            
                             Spacer()
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f")")
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies XAG", displayMode: .inline).offset(y: -10)
         
     }
 }

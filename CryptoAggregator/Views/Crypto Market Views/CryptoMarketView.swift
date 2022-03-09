@@ -9,7 +9,6 @@ import SwiftUI
 
 //MARK: - CryptoMarketView
 struct CryptoMarketView: View {
-    
     var body: some View {
         NavigationView {
             ScrollView {

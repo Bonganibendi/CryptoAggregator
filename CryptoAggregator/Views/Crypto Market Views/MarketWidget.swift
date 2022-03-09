@@ -75,7 +75,7 @@ struct MarketWidget_Previews: PreviewProvider {
         Group {
             MarketWidget(markets: marketData[0])
             MarketWidget(markets: marketData[3])
-                .previewDevice("iPhone 13 Pro Max")
+                .previewDevice("iPhone 8")
         }
     }
 }
