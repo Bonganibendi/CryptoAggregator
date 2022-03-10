@@ -87,14 +87,26 @@ struct CryptoDetail: View {
                             Text("Price Change 1h")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.hourlyChange ?? 0, specifier: "%.2f")%")
+                            if instrument.hourlyChange! > 0 {
+                                Text("\(instrument.hourlyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            }else {
+                                Text("\(instrument.hourlyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                         
                         VStack(alignment:.leading) {
                             Text("Price Change 1d")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.dailyChange ?? 0, specifier: "%.2f")%")
+                            if instrument.dailyChange! > 0 {
+                                Text("\(instrument.dailyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(instrument.dailyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                     }.padding()
                     // MARK: Row 3 Price Info.
@@ -103,14 +115,26 @@ struct CryptoDetail: View {
                             Text("Price Change 7d")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.weeklyChange ?? 0, specifier: "%.2f")%")
+                            if instrument.weeklyChange! > 0 {
+                                Text("\(instrument.weeklyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(instrument.weeklyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                         
                         VStack(alignment:.leading) {
                             Text("Price Change 14d")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.biweeklyChange ?? 0, specifier: "%.2f")%")
+                            if instrument.biweeklyChange! > 0 {
+                                Text("\(instrument.biweeklyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(instrument.biweeklyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                     }.padding()
                     // MARK: Row 4 Price Info.
@@ -119,14 +143,26 @@ struct CryptoDetail: View {
                             Text("Price Change 30d")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.monthlyChange ?? 0, specifier: "%.2f")%")
+                            if instrument.monthlyChange! > 0 {
+                                Text("\(instrument.monthlyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(instrument.monthlyChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                         
                         VStack(alignment:.leading) {
                             Text("Price Change 1y")
                                 .font(.headline)
                                 .padding(.bottom, 1)
-                            Text("\(instrument.annualChange ?? 0, specifier: "%.2f")%")
+                            if instrument.annualChange! > 0 {
+                                Text("\(instrument.annualChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("\(instrument.annualChange ?? 0, specifier: "%.2f")%")
+                                    .foregroundColor(.red)
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading)
                     }.padding()
                 }

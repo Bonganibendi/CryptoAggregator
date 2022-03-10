@@ -63,7 +63,7 @@ struct CryptoViewEUR: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") €")
                         }
                     }
                 }
@@ -97,7 +97,7 @@ struct CryptoViewAUD: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") A$")
                         }
                     }
                 }
@@ -131,7 +131,7 @@ struct CryptoViewSGD: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") S$")
                         }
                     }
                 }
@@ -165,7 +165,7 @@ struct CryptoViewBRL: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R$")
                         }
                     }
                 }
@@ -199,7 +199,7 @@ struct CryptoViewZAR: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R")
                         }
                     }
                 }
@@ -233,7 +233,7 @@ struct CryptoViewINR: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ₹")
                         }
                     }
                 }
@@ -267,7 +267,7 @@ struct CryptoViewJPY: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ¥")
                         }
                     }
                 }
@@ -301,14 +301,14 @@ struct CryptoViewXAU: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AU")
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
             }
-        }.navigationBarTitle("Cryptocurrencies XAU", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Cryptocurrencies au", displayMode: .inline).offset(y: -10)
         
     }
 }
@@ -335,7 +335,7 @@ struct CryptoViewXAG: View {
                             
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ag")
                         }
                     }
                 }
