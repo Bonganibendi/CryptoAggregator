@@ -10,10 +10,12 @@ import SwiftUI
 //MARK: - CryptoViewUSD
 struct CryptoViewUSD: View {
     @StateObject var viewModel = CryptoViewModelUSD()
+    @State private var searchText = ""
+    
     var body: some View {
             ZStack {
                 List{
-                    ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                    ForEach(filterInstruments,id: \.self){ crypto in
                         NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                             HStack(spacing: 10) {
                                 
@@ -35,19 +37,27 @@ struct CryptoViewUSD: View {
                     }
                 }.onAppear {
                     viewModel.fetchCryptoData()
-                }
+                }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
             }.navigationBarTitle("Cryptocurrencies USD", displayMode: .inline).offset(y: -10)
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 
 //MARK: - CryptoViewEUR
 struct CryptoViewEUR: View {
     @StateObject var viewModel = CryptoViewModelEUR()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -69,19 +79,26 @@ struct CryptoViewEUR: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies EUR", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewAUD
 struct CryptoViewAUD: View {
     @StateObject var viewModel = CryptoViewModelAUD()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -103,19 +120,26 @@ struct CryptoViewAUD: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies AUD", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewSGD
 struct CryptoViewSGD: View {
     @StateObject var viewModel = CryptoViewModelSGD()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -137,19 +161,26 @@ struct CryptoViewSGD: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies SGD", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewBRL
 struct CryptoViewBRL: View {
     @StateObject var viewModel = CryptoViewModelBRL()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -171,19 +202,26 @@ struct CryptoViewBRL: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies BRL", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewZAR
 struct CryptoViewZAR: View {
     @StateObject var viewModel = CryptoViewModelZAR()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -205,19 +243,26 @@ struct CryptoViewZAR: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies ZAR", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewINR
 struct CryptoViewINR: View {
     @StateObject var viewModel = CryptoViewModelINR()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -239,19 +284,26 @@ struct CryptoViewINR: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies INR", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewJPY
 struct CryptoViewJPY: View {
     @StateObject var viewModel = CryptoViewModelJPY()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -273,19 +325,26 @@ struct CryptoViewJPY: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies JPY", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewXAU
 struct CryptoViewXAU: View {
     @StateObject var viewModel = CryptoViewModelXAU()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -307,19 +366,26 @@ struct CryptoViewXAU: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies au", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - CryptoViewXAG
 struct CryptoViewXAG: View {
     @StateObject var viewModel = CryptoViewModelXAG()
+    @State private var searchText = ""
     
     var body: some View {
         ZStack {
             List{
-                ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
+                ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack {
                             
@@ -341,9 +407,15 @@ struct CryptoViewXAG: View {
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }
+            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Cryptocurrencies XAG", displayMode: .inline).offset(y: -10)
-        
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
     }
 }
 //MARK: - Custom URL Image.
