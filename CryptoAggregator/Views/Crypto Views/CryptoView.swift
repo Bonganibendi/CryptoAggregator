@@ -10,6 +10,8 @@ import SwiftUI
 //MARK: - CryptoViewUSD
 struct CryptoViewUSD: View {
     @StateObject var viewModel = CryptoViewModelUSD()
+    @ObservedObject var favourites = FavouritesUSD()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -30,11 +32,21 @@ struct CryptoViewUSD: View {
                                         .fontWeight(.semibold)
                                 }
                                 
-                                Spacer()
-                                
                                 Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
                                     .font(.system(size: 15))
-                        
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    if favourites.contains(crypto) {
+                                        favourites.remove(crypto)
+                                    } else {
+                                        favourites.add(crypto)
+                                    }
+                                }, label: {
+                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                })
+                                    .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }

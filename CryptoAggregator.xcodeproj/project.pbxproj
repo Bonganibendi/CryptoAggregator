@@ -13,6 +13,7 @@
 		F28F201F2804A9EA0021D596 /* PortfolioMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F201E2804A9EA0021D596 /* PortfolioMarketModel.swift */; };
 		F28F20232804ADDA0021D596 /* PortfolioWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F20222804ADDA0021D596 /* PortfolioWidget.swift */; };
 		F28F20252804B0480021D596 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F20242804B0480021D596 /* PortfolioView.swift */; };
+		F28F20272804B15E0021D596 /* PortfolioMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F20262804B15E0021D596 /* PortfolioMarketView.swift */; };
 		F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */; };
 		F2A296C127CFA10C00A229CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C027CFA10C00A229CE /* Assets.xcassets */; };
 		F2A296C427CFA10C00A229CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C327CFA10C00A229CE /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		F28F201E2804A9EA0021D596 /* PortfolioMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioMarketModel.swift; sourceTree = "<group>"; };
 		F28F20222804ADDA0021D596 /* PortfolioWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioWidget.swift; sourceTree = "<group>"; };
 		F28F20242804B0480021D596 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		F28F20262804B15E0021D596 /* PortfolioMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioMarketView.swift; sourceTree = "<group>"; };
 		F2A296B927CFA10B00A229CE /* CryptoAggregator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAggregator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAggregatorApp.swift; sourceTree = "<group>"; };
 		F2A296C027CFA10C00A229CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */,
+				F28F20262804B15E0021D596 /* PortfolioMarketView.swift */,
 				F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */,
 				F28F20222804ADDA0021D596 /* PortfolioWidget.swift */,
 			);
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28F20252804B0480021D596 /* PortfolioView.swift in Sources */,
+				F28F20272804B15E0021D596 /* PortfolioMarketView.swift in Sources */,
 				F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */,
 				F28F201D2804A65B0021D596 /* Favourites.swift in Sources */,
 				F28F20232804ADDA0021D596 /* PortfolioWidget.swift in Sources */,
