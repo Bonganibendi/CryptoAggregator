@@ -19,6 +19,7 @@ struct CryptoViewUSD: View {
                         NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                             HStack(spacing: 10) {
                                 
+                                
                                 urlImage(urlString: crypto.image!, data: nil)
                                     .frame(width: 40, height: 40)
                                     .cornerRadius(10)
@@ -32,6 +33,8 @@ struct CryptoViewUSD: View {
                                 Spacer()
                                 
                                 Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                    .font(.system(size: 15))
+                        
                             }
                         }
                     }
@@ -74,6 +77,7 @@ struct CryptoViewEUR: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") €")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -115,6 +119,7 @@ struct CryptoViewAUD: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") A$")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -156,6 +161,7 @@ struct CryptoViewSGD: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") S$")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -197,6 +203,7 @@ struct CryptoViewBRL: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R$")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -238,6 +245,7 @@ struct CryptoViewZAR: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -279,6 +287,7 @@ struct CryptoViewINR: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ₹")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -320,6 +329,7 @@ struct CryptoViewJPY: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ¥")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -361,6 +371,7 @@ struct CryptoViewXAU: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AU")
+                                .font(.system(size: 15))
                         }
                     }
                 }
@@ -402,6 +413,7 @@ struct CryptoViewXAG: View {
                             Spacer()
                             
                             Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ag")
+                                .font(.system(size: 15))
                         }
                     }
                 }

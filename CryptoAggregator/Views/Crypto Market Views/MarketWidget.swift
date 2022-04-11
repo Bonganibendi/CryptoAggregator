@@ -32,7 +32,7 @@ struct MarketWidget: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 130, height: 130)
                         .cornerRadius(15)
-                }.padding(.horizontal,25)
+                }.padding(.horizontal,30)
                 
                 RoundedRectangle(cornerRadius: 5)
                     .frame(width: 1, height: 180).offset(x:-10)

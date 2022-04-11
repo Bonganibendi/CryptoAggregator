@@ -12,7 +12,7 @@ struct CryptoMarketView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: -10){
+                VStack(){
                     //MARK: USD
                     NavigationLink(destination: CryptoViewUSD()) {
                         MarketWidget(markets: marketData[0])

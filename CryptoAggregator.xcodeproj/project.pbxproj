@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F28A3CA027D3F5F20030B653 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A3C9F27D3F5F20030B653 /* CryptoViewModel.swift */; };
 		F28A3CA227D3F70B0030B653 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28A3CA127D3F70B0030B653 /* CryptoModel.swift */; };
+		F28F201D2804A65B0021D596 /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F201C2804A65B0021D596 /* Favourites.swift */; };
 		F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */; };
 		F2A296C127CFA10C00A229CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C027CFA10C00A229CE /* Assets.xcassets */; };
 		F2A296C427CFA10C00A229CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A296C327CFA10C00A229CE /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		F28A3C9F27D3F5F20030B653 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
 		F28A3CA127D3F70B0030B653 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		F28F201C2804A65B0021D596 /* Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
 		F2A296B927CFA10B00A229CE /* CryptoAggregator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAggregator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A296BC27CFA10B00A229CE /* CryptoAggregatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAggregatorApp.swift; sourceTree = "<group>"; };
 		F2A296C027CFA10C00A229CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				F28A3CA127D3F70B0030B653 /* CryptoModel.swift */,
 				F2CFA2E227D79FC100BBC405 /* MarketModel.swift */,
+				F28F201C2804A65B0021D596 /* Favourites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */,
+				F28F201D2804A65B0021D596 /* Favourites.swift in Sources */,
 				F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */,
 				F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */,
 				F2A296CD27CFA1A100A229CE /* TabBarView.swift in Sources */,

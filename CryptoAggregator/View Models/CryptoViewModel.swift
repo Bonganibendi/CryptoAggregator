@@ -53,7 +53,6 @@ class CryptoViewModelUSD: ObservableObject {
          dataTask.resume()
     }
 }
-
 //MARK: - EUR
 class CryptoViewModelEUR: ObservableObject {
     

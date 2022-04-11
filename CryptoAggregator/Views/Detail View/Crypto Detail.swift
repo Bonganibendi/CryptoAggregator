@@ -10,6 +10,7 @@ import SwiftUI
 struct CryptoDetail: View {
     var instrument : Instrument
     
+    
     var body: some View {
         
         ScrollView {

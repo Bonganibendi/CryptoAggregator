@@ -17,10 +17,12 @@ struct UserWidget: View {
                 .padding()
             
             HStack {
-                Circle()
-                    .frame(width: 65, height: 65)
+                Image("Jon Doe")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 65, height: 65).clipShape(Circle())
                 
-                Text("Bongani Bendile")
+                Text("Jon Doe")
                     .font(.title2)
                 Spacer()
             }.padding()
