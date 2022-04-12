@@ -53,7 +53,7 @@ struct CryptoViewUSD: View {
                 }.onAppear {
                     viewModel.fetchCryptoData()
                 }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-            }.navigationBarTitle("Cryptocurrencies USD", displayMode: .inline).offset(y: -10)
+            }.navigationBarTitle("Market Capitalisation USD", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -96,7 +96,7 @@ struct CryptoViewEUR: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies EUR", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation EUR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -138,7 +138,7 @@ struct CryptoViewAUD: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies AUD", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation AUD", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -180,7 +180,7 @@ struct CryptoViewSGD: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies SGD", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation SGD", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -222,7 +222,7 @@ struct CryptoViewBRL: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies BRL", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation BRL", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -264,7 +264,7 @@ struct CryptoViewZAR: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies ZAR", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation ZAR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -306,7 +306,7 @@ struct CryptoViewINR: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies INR", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation INR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -348,7 +348,7 @@ struct CryptoViewJPY: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies JPY", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation JPY", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -390,7 +390,7 @@ struct CryptoViewXAU: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies au", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation au", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -432,7 +432,7 @@ struct CryptoViewXAG: View {
             }.onAppear {
                 viewModel.fetchCryptoData()
             }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Cryptocurrencies XAG", displayMode: .inline).offset(y: -10)
+        }.navigationBarTitle("Market Capitalisation XAG", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {

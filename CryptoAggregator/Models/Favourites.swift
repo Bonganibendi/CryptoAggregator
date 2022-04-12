@@ -127,7 +127,7 @@ class FavouritesEUR: ObservableObject {
     }
 }
 //MARK: - AUD
-class FavouritesAUR: ObservableObject {
+class FavouritesAUD: ObservableObject {
     var cryptos: Set<String>
     
     private let saveKey = "Favourites"
