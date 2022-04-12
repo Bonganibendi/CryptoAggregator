@@ -15,66 +15,12 @@ struct CryptoViewUSD: View {
     @State private var searchText = ""
     
     var body: some View {
-            ZStack {
-                List{
-                    ForEach(filterInstruments,id: \.self){ crypto in
-                        NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                            HStack(spacing: 10) {
-                                
-                                
-                                urlImage(urlString: crypto.image!, data: nil)
-                                    .frame(width: 40, height: 40)
-                                    .cornerRadius(10)
-                                
-                                VStack(alignment: .leading) {
-                                    Text(crypto.symbol!)
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                }
-                                
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
-                                    .font(.system(size: 15))
-                                
-                                Spacer()
-                                
-                                Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
-                                    } else {
-                                        favourites.add(crypto)
-                                    }
-                                }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
-                                })
-                                    .buttonStyle(PlainButtonStyle())
-                            }
-                        }
-                    }
-                }.onAppear {
-                    viewModel.fetchCryptoData()
-                }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-            }.navigationBarTitle("Market Capitalisation USD", displayMode: .inline).offset(y: -10)
-    }
-    var filterInstruments: [Instrument]{
-        if searchText.isEmpty {
-            return viewModel.instrumentPublished
-        } else {
-            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
-        }
-    }
-}
-
-//MARK: - CryptoViewEUR
-struct CryptoViewEUR: View {
-    @StateObject var viewModel = CryptoViewModelEUR()
-    @State private var searchText = ""
-    
-    var body: some View {
         ZStack {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -86,16 +32,83 @@ struct CryptoViewEUR: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") €")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
+        }.navigationBarTitle("Market Capitalisation USD", displayMode: .inline).offset(y: -10)
+    }
+    var filterInstruments: [Instrument]{
+        if searchText.isEmpty {
+            return viewModel.instrumentPublished
+        } else {
+            return viewModel.instrumentPublished.filter { $0.name!.localizedCaseInsensitiveContains(searchText)}
+        }
+    }
+}
+//MARK: - CryptoViewEUR
+struct CryptoViewEUR: View {
+    @StateObject var viewModel = CryptoViewModelEUR()
+    @ObservedObject var favourites = FavouritesEUR()
+    
+    @State private var searchText = ""
+    
+    var body: some View {
+        ZStack {
+            List{
+                ForEach(filterInstruments,id: \.self){ crypto in
+                    NavigationLink(destination: CryptoDetail(instrument: crypto)) {
+                        HStack(spacing: 10) {
+                            
+                            
+                            urlImage(urlString: crypto.image!, data: nil)
+                                .frame(width: 40, height: 40)
+                                .cornerRadius(10)
+                            
+                            VStack(alignment: .leading) {
+                                Text(crypto.symbol!)
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                            }
+                            
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                }
+            }.onAppear {
+                viewModel.fetchCryptoData()
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation EUR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -109,6 +122,8 @@ struct CryptoViewEUR: View {
 //MARK: - CryptoViewAUD
 struct CryptoViewAUD: View {
     @StateObject var viewModel = CryptoViewModelAUD()
+    @ObservedObject var favourites = FavouritesAUD()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -116,7 +131,8 @@ struct CryptoViewAUD: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -128,16 +144,27 @@ struct CryptoViewAUD: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") A$")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation AUD", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -151,6 +178,8 @@ struct CryptoViewAUD: View {
 //MARK: - CryptoViewSGD
 struct CryptoViewSGD: View {
     @StateObject var viewModel = CryptoViewModelSGD()
+    @ObservedObject var favourites = FavouritesSGD()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -158,7 +187,8 @@ struct CryptoViewSGD: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -170,16 +200,27 @@ struct CryptoViewSGD: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") S$")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation SGD", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -193,6 +234,8 @@ struct CryptoViewSGD: View {
 //MARK: - CryptoViewBRL
 struct CryptoViewBRL: View {
     @StateObject var viewModel = CryptoViewModelBRL()
+    @ObservedObject var favourites = FavouritesBRL()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -200,7 +243,8 @@ struct CryptoViewBRL: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -212,16 +256,27 @@ struct CryptoViewBRL: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R$")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation BRL", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -235,6 +290,8 @@ struct CryptoViewBRL: View {
 //MARK: - CryptoViewZAR
 struct CryptoViewZAR: View {
     @StateObject var viewModel = CryptoViewModelZAR()
+    @ObservedObject var favourites = FavouritesZAR()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -242,7 +299,8 @@ struct CryptoViewZAR: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -254,16 +312,27 @@ struct CryptoViewZAR: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation ZAR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -277,6 +346,8 @@ struct CryptoViewZAR: View {
 //MARK: - CryptoViewINR
 struct CryptoViewINR: View {
     @StateObject var viewModel = CryptoViewModelINR()
+    @ObservedObject var favourites = FavouritesINR()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -284,7 +355,8 @@ struct CryptoViewINR: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -296,16 +368,27 @@ struct CryptoViewINR: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ₹")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation INR", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -319,6 +402,8 @@ struct CryptoViewINR: View {
 //MARK: - CryptoViewJPY
 struct CryptoViewJPY: View {
     @StateObject var viewModel = CryptoViewModelJPY()
+    @ObservedObject var favourites = FavouritesJPY()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -326,7 +411,8 @@ struct CryptoViewJPY: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -338,16 +424,27 @@ struct CryptoViewJPY: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ¥")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation JPY", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
@@ -361,6 +458,8 @@ struct CryptoViewJPY: View {
 //MARK: - CryptoViewXAU
 struct CryptoViewXAU: View {
     @StateObject var viewModel = CryptoViewModelXAU()
+    @ObservedObject var favourites = FavouritesXAU()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -368,7 +467,8 @@ struct CryptoViewXAU: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -380,17 +480,28 @@ struct CryptoViewXAU: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AU")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
-        }.navigationBarTitle("Market Capitalisation au", displayMode: .inline).offset(y: -10)
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
+        }.navigationBarTitle("Market Capitalisation XAU", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
         if searchText.isEmpty {
@@ -403,6 +514,8 @@ struct CryptoViewXAU: View {
 //MARK: - CryptoViewXAG
 struct CryptoViewXAG: View {
     @StateObject var viewModel = CryptoViewModelXAG()
+    @ObservedObject var favourites = FavouritesXAG()
+    
     @State private var searchText = ""
     
     var body: some View {
@@ -410,7 +523,8 @@ struct CryptoViewXAG: View {
             List{
                 ForEach(filterInstruments,id: \.self){ crypto in
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
-                        HStack {
+                        HStack(spacing: 10) {
+                            
                             
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
@@ -422,16 +536,27 @@ struct CryptoViewXAG: View {
                                     .fontWeight(.semibold)
                             }
                             
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                .font(.system(size: 15))
+                            
                             Spacer()
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ag")
-                                .font(.system(size: 15))
+                            Button(action: {
+                                if favourites.contains(crypto) {
+                                    favourites.remove(crypto)
+                                } else {
+                                    favourites.add(crypto)
+                                }
+                            }, label: {
+                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                            })
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }.onAppear {
                 viewModel.fetchCryptoData()
-            }.searchable(text: $searchText, prompt: "Search Cryptocurrency List")
+            }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always) ,prompt: "Search Cryptocurrency List")
         }.navigationBarTitle("Market Capitalisation XAG", displayMode: .inline).offset(y: -10)
     }
     var filterInstruments: [Instrument]{
