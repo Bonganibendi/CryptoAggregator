@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: - CryptoViewUSD
 struct CryptoViewUSD: View {
     @StateObject var viewModel = CryptoViewModelUSD()
-    @ObservedObject var favourites = FavouritesUSD()
+    @ObservedObject var favouritesUSD = FavouritesUSD()
     
     @State private var searchText = ""
     
@@ -38,13 +38,13 @@ struct CryptoViewUSD: View {
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesUSD.contains(crypto) {
+                                    favouritesUSD.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesUSD.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesUSD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -66,7 +66,7 @@ struct CryptoViewUSD: View {
 //MARK: - CryptoViewEUR
 struct CryptoViewEUR: View {
     @StateObject var viewModel = CryptoViewModelEUR()
-    @ObservedObject var favourites = FavouritesEUR()
+    @ObservedObject var favouritesEUR = FavouritesEUR()
     
     @State private var searchText = ""
     
@@ -88,19 +88,19 @@ struct CryptoViewEUR: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") €")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesEUR.contains(crypto) {
+                                    favouritesEUR.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesEUR.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesEUR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -122,7 +122,7 @@ struct CryptoViewEUR: View {
 //MARK: - CryptoViewAUD
 struct CryptoViewAUD: View {
     @StateObject var viewModel = CryptoViewModelAUD()
-    @ObservedObject var favourites = FavouritesAUD()
+    @ObservedObject var favouritesAUD = FavouritesAUD()
     
     @State private var searchText = ""
     
@@ -144,19 +144,19 @@ struct CryptoViewAUD: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") A$")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesAUD.contains(crypto) {
+                                    favouritesAUD.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesAUD.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesAUD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -178,7 +178,7 @@ struct CryptoViewAUD: View {
 //MARK: - CryptoViewSGD
 struct CryptoViewSGD: View {
     @StateObject var viewModel = CryptoViewModelSGD()
-    @ObservedObject var favourites = FavouritesSGD()
+    @ObservedObject var favouritesSGD = FavouritesSGD()
     
     @State private var searchText = ""
     
@@ -200,19 +200,19 @@ struct CryptoViewSGD: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") S$")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesSGD.contains(crypto) {
+                                    favouritesSGD.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesSGD.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesSGD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -234,7 +234,7 @@ struct CryptoViewSGD: View {
 //MARK: - CryptoViewBRL
 struct CryptoViewBRL: View {
     @StateObject var viewModel = CryptoViewModelBRL()
-    @ObservedObject var favourites = FavouritesBRL()
+    @ObservedObject var favouritesBRL = FavouritesBRL()
     
     @State private var searchText = ""
     
@@ -256,19 +256,19 @@ struct CryptoViewBRL: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R$")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesBRL.contains(crypto) {
+                                    favouritesBRL.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesBRL.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesBRL.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -290,7 +290,7 @@ struct CryptoViewBRL: View {
 //MARK: - CryptoViewZAR
 struct CryptoViewZAR: View {
     @StateObject var viewModel = CryptoViewModelZAR()
-    @ObservedObject var favourites = FavouritesZAR()
+    @ObservedObject var favouritesZAR = FavouritesZAR()
     
     @State private var searchText = ""
     
@@ -312,19 +312,19 @@ struct CryptoViewZAR: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") Z")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesZAR.contains(crypto) {
+                                    favouritesZAR.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesZAR.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesZAR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -346,7 +346,7 @@ struct CryptoViewZAR: View {
 //MARK: - CryptoViewINR
 struct CryptoViewINR: View {
     @StateObject var viewModel = CryptoViewModelINR()
-    @ObservedObject var favourites = FavouritesINR()
+    @ObservedObject var favouritesINR = FavouritesINR()
     
     @State private var searchText = ""
     
@@ -368,19 +368,19 @@ struct CryptoViewINR: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ₹")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesINR.contains(crypto) {
+                                    favouritesINR.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesINR.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesINR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -402,7 +402,7 @@ struct CryptoViewINR: View {
 //MARK: - CryptoViewJPY
 struct CryptoViewJPY: View {
     @StateObject var viewModel = CryptoViewModelJPY()
-    @ObservedObject var favourites = FavouritesJPY()
+    @ObservedObject var favouritesJPY = FavouritesJPY()
     
     @State private var searchText = ""
     
@@ -424,19 +424,19 @@ struct CryptoViewJPY: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ¥")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesJPY.contains(crypto) {
+                                    favouritesJPY.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesJPY.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesJPY.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -458,7 +458,7 @@ struct CryptoViewJPY: View {
 //MARK: - CryptoViewXAU
 struct CryptoViewXAU: View {
     @StateObject var viewModel = CryptoViewModelXAU()
-    @ObservedObject var favourites = FavouritesXAU()
+    @ObservedObject var favouritesXAU = FavouritesXAU()
     
     @State private var searchText = ""
     
@@ -480,19 +480,19 @@ struct CryptoViewXAU: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AU")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesXAU.contains(crypto) {
+                                    favouritesXAU.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesXAU.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesXAU.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }
@@ -514,7 +514,7 @@ struct CryptoViewXAU: View {
 //MARK: - CryptoViewXAG
 struct CryptoViewXAG: View {
     @StateObject var viewModel = CryptoViewModelXAG()
-    @ObservedObject var favourites = FavouritesXAG()
+    @ObservedObject var favouritesXAG = FavouritesXAG()
     
     @State private var searchText = ""
     
@@ -536,19 +536,19 @@ struct CryptoViewXAG: View {
                                     .fontWeight(.semibold)
                             }
                             
-                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                            Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AG")
                                 .font(.system(size: 15))
                             
                             Spacer()
                             
                             Button(action: {
-                                if favourites.contains(crypto) {
-                                    favourites.remove(crypto)
+                                if favouritesXAG.contains(crypto) {
+                                    favouritesXAG.remove(crypto)
                                 } else {
-                                    favourites.add(crypto)
+                                    favouritesXAG.add(crypto)
                                 }
                             }, label: {
-                                favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                favouritesXAG.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                             })
                                 .buttonStyle(PlainButtonStyle())
                         }

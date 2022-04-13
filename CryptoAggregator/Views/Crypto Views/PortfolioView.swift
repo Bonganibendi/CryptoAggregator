@@ -10,14 +10,14 @@ import SwiftUI
 //MARK: - PortfolioViewUSD
 struct PortfolioViewUSD: View {
     @StateObject var viewModel = CryptoViewModelUSD()
-    @ObservedObject var favourites = FavouritesUSD()
+    @ObservedObject var favouritesUSD = FavouritesUSD()
     
     var body: some View {
         NavigationView {
             ZStack {
                 List{
                     ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                        if favourites.contains(crypto) {
+                        if favouritesUSD.contains(crypto) {
                             HStack(spacing: 10) {
                                     
                                     urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -39,13 +39,13 @@ struct PortfolioViewUSD: View {
                                     Spacer()
                                     
                                     Button(action: {
-                                        if favourites.contains(crypto) {
-                                            favourites.remove(crypto)
+                                        if favouritesUSD.contains(crypto) {
+                                            favouritesUSD.remove(crypto)
                                         } else {
-                                            favourites.add(crypto)
+                                            favouritesUSD.add(crypto)
                                         }
                                     }, label: {
-                                        favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                        favouritesUSD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                     })
                                         .buttonStyle(PlainButtonStyle())
                             
@@ -63,13 +63,13 @@ struct PortfolioViewUSD: View {
 //MARK: - PortfolioViewEUR
 struct PortfolioViewEUR: View {
     @StateObject var viewModel = CryptoViewModelEUR()
-    @ObservedObject var favourites = FavouritesEUR()
+    @ObservedObject var favouritesEUR = FavouritesEUR()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesEUR.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -85,19 +85,19 @@ struct PortfolioViewEUR: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") €")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesEUR.contains(crypto) {
+                                        favouritesEUR.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesEUR.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesEUR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -113,13 +113,13 @@ struct PortfolioViewEUR: View {
 //MARK: - PortfolioViewAUD
 struct PortfolioViewAUD: View {
     @StateObject var viewModel = CryptoViewModelAUD()
-    @ObservedObject var favourites = FavouritesAUD()
+    @ObservedObject var favouritesAUD = FavouritesAUD()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesAUD.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -135,19 +135,19 @@ struct PortfolioViewAUD: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") A$")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesAUD.contains(crypto) {
+                                        favouritesAUD.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesAUD.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesAUD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -163,13 +163,13 @@ struct PortfolioViewAUD: View {
 //MARK: - PortfolioViewSGD
 struct PortfolioViewSGD: View {
     @StateObject var viewModel = CryptoViewModelSGD()
-    @ObservedObject var favourites = FavouritesSGD()
+    @ObservedObject var favouritesSGD = FavouritesSGD()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesSGD.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -185,19 +185,19 @@ struct PortfolioViewSGD: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") S$")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesSGD.contains(crypto) {
+                                        favouritesSGD.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesSGD.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesSGD.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -213,13 +213,13 @@ struct PortfolioViewSGD: View {
 //MARK: - PortfolioViewBRL
 struct PortfolioViewBRL: View {
     @StateObject var viewModel = CryptoViewModelBRL()
-    @ObservedObject var favourites = FavouritesBRL()
+    @ObservedObject var favouritesBRL = FavouritesBRL()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesBRL.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -235,19 +235,19 @@ struct PortfolioViewBRL: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R$")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesBRL.contains(crypto) {
+                                        favouritesBRL.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesBRL.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesBRL.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -263,13 +263,13 @@ struct PortfolioViewBRL: View {
 //MARK: - PortfolioViewZAR
 struct PortfolioViewZAR: View {
     @StateObject var viewModel = CryptoViewModelZAR()
-    @ObservedObject var favourites = FavouritesZAR()
+    @ObservedObject var favouritesZAR = FavouritesZAR()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesZAR.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -285,19 +285,19 @@ struct PortfolioViewZAR: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") R")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesZAR.contains(crypto) {
+                                        favouritesZAR.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesZAR.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesZAR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -313,13 +313,13 @@ struct PortfolioViewZAR: View {
 //MARK: - PortfolioViewINR
 struct PortfolioViewINR: View {
     @StateObject var viewModel = CryptoViewModelINR()
-    @ObservedObject var favourites = FavouritesINR()
+    @ObservedObject var favouritesINR = FavouritesINR()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesINR.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -335,19 +335,19 @@ struct PortfolioViewINR: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ₹")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesINR.contains(crypto) {
+                                        favouritesINR.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesINR.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesINR.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -363,13 +363,13 @@ struct PortfolioViewINR: View {
 //MARK: - PortfolioViewJPY
 struct PortfolioViewJPY: View {
     @StateObject var viewModel = CryptoViewModelJPY()
-    @ObservedObject var favourites = FavouritesJPY()
+    @ObservedObject var favouritesJPY = FavouritesJPY()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesJPY.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -385,19 +385,19 @@ struct PortfolioViewJPY: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") ¥")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesJPY.contains(crypto) {
+                                        favouritesJPY.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesJPY.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesJPY.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -413,13 +413,13 @@ struct PortfolioViewJPY: View {
 //MARK: - PortfolioViewXAU
 struct PortfolioViewXAU: View {
     @StateObject var viewModel = CryptoViewModelXAU()
-    @ObservedObject var favourites = FavouritesXAU()
+    @ObservedObject var favouritesXAU = FavouritesXAU()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesXAU.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -435,19 +435,19 @@ struct PortfolioViewXAU: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AU")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesXAU.contains(crypto) {
+                                        favouritesXAU.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesXAU.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesXAU.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
@@ -463,13 +463,13 @@ struct PortfolioViewXAU: View {
 //MARK: - PortfolioViewXAG
 struct PortfolioViewXAG: View {
     @StateObject var viewModel = CryptoViewModelXAG()
-    @ObservedObject var favourites = FavouritesXAG()
+    @ObservedObject var favouritesXAG = FavouritesXAG()
     
     var body: some View {
         ZStack {
             List{
                 ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
-                    if favourites.contains(crypto) {
+                    if favouritesXAG.contains(crypto) {
                         HStack(spacing: 10) {
                                 
                                 urlImagePortfolio(urlString: crypto.image!, data: nil)
@@ -485,19 +485,19 @@ struct PortfolioViewXAG: View {
                                     }
                                 
                                 
-                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") $")
+                                Text("\(crypto.marketCap ?? 0, specifier: "%.1f") AG")
                                     .font(.system(size: 15))
                                 
                                 Spacer()
                                 
                                 Button(action: {
-                                    if favourites.contains(crypto) {
-                                        favourites.remove(crypto)
+                                    if favouritesXAG.contains(crypto) {
+                                        favouritesXAG.remove(crypto)
                                     } else {
-                                        favourites.add(crypto)
+                                        favouritesXAG.add(crypto)
                                     }
                                 }, label: {
-                                    favourites.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
+                                    favouritesXAG.contains(crypto) ? Image(systemName: "heart.fill").foregroundColor(.red) : Image(systemName: "heart").foregroundColor(.black)
                                 })
                                     .buttonStyle(PlainButtonStyle())
                         
