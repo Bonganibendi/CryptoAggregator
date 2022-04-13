@@ -6,603 +6,334 @@
 //
 
 import Foundation
+
 //MARK: - USD
 class FavouritesUSD: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosUSD: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyUSD = "FavouritesUSD"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyUSD)
+        cryptosUSD = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosUSD.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosUSD.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosUSD.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayUSD = Array(cryptosUSD)
+            UserDefaults.standard.set(favoritesArrayUSD, forKey: saveKeyUSD)
     }
 }
 //MARK: - EUR
 class FavouritesEUR: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosEUR: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyEUR = "FavouritesEUR"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyEUR)
+        cryptosEUR = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosEUR.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosEUR.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosEUR.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayEUR = Array(cryptosEUR)
+            UserDefaults.standard.set(favoritesArrayEUR, forKey: saveKeyEUR)
     }
 }
 //MARK: - AUD
 class FavouritesAUD: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosAUD: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyAUD = "FavouritesAUD"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyAUD)
+        cryptosAUD = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosAUD.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosAUD.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosAUD.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayAUD = Array(cryptosAUD)
+            UserDefaults.standard.set(favoritesArrayAUD, forKey: saveKeyAUD)
     }
 }
 //MARK: - SGD
 class FavouritesSGD: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosSGD: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeySGD = "FavouritesSGD"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeySGD)
+        cryptosSGD = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosSGD.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosSGD.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosSGD.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArraySGD = Array(cryptosSGD)
+            UserDefaults.standard.set(favoritesArraySGD, forKey: saveKeySGD)
     }
 }
 //MARK: - BRL
 class FavouritesBRL: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosBRL: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyBRL = "FavouritesBRL"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyBRL)
+        cryptosBRL = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosBRL.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosBRL.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosBRL.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayBRL = Array(cryptosBRL)
+            UserDefaults.standard.set(favoritesArrayBRL, forKey: saveKeyBRL)
     }
 }
 //MARK: - ZAR
 class FavouritesZAR: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosZAR: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyZAR = "FavouritesZAR"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyZAR)
+        cryptosZAR = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosZAR.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosZAR.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosZAR.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayZAR = Array(cryptosZAR)
+            UserDefaults.standard.set(favoritesArrayZAR, forKey: saveKeyZAR)
     }
 }
 //MARK: - INR
 class FavouritesINR: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosINR: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyINR = "FavouritesINR"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyINR)
+        cryptosINR = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosINR.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosINR.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosINR.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayINR = Array(cryptosINR)
+            UserDefaults.standard.set(favoritesArrayINR, forKey: saveKeyINR)
     }
 }
 //MARK: - JPY
 class FavouritesJPY: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosJPY: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyJPY = "FavouritesJPY"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyJPY)
+        cryptosJPY = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosJPY.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosJPY.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosJPY.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayJPY = Array(cryptosJPY)
+            UserDefaults.standard.set(favoritesArrayJPY, forKey: saveKeyJPY)
     }
 }
 //MARK: - XAU
 class FavouritesXAU: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosXAU: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyXAU = "FavouritesXAU"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyXAU)
+        cryptosXAU = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosXAU.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosXAU.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosXAU.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayXAU = Array(cryptosXAU)
+            UserDefaults.standard.set(favoritesArrayXAU, forKey: saveKeyXAU)
     }
 }
-//MARK: - XAG
+//MARK: - XAU
 class FavouritesXAG: ObservableObject {
-    var cryptos: Set<String>
+    var cryptosXAG: Set<String>
     
-    private let saveKey = "Favourites"
+    private let saveKeyXAG = "FavouritesXAG"
     
     init() {
         //load our saved data
-        self.cryptos = []
-        
-        self.load()
+        let favouriteCryptos = UserDefaults.standard.stringArray(forKey: saveKeyXAG)
+        cryptosXAG = Set(favouriteCryptos ?? ["Empty"])
     }
     
     func contains(_ crypto: Instrument) -> Bool {
-        cryptos.contains(crypto.id!)
+        cryptosXAG.contains(crypto.id!)
     }
     
     func add(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.insert(crypto.id!)
+        cryptosXAG.insert(crypto.id!)
         save()
     }
     
     func remove(_ crypto: Instrument) {
         objectWillChange.send()
-        cryptos.remove(crypto.id!)
+        cryptosXAG.remove(crypto.id!)
         save()
     }
     
     func save() {
-        do {
-            let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-            let resortIds = Array(self.cryptos)
-            let data = try JSONEncoder().encode(resortIds)
-            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
-            print("Resort data saved")
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func load() {
-        let filename = getDocumentsDirectory().appendingPathComponent("SavedPlaces")
-        do {
-            let data = try Data(contentsOf: filename)
-            let resortIds = try JSONDecoder().decode([String].self, from: data)
-            cryptos = Set(resortIds)
-        } catch {
-            print("Unable to load saved data.")
-        }
+        let favoritesArrayXAG = Array(cryptosXAG)
+            UserDefaults.standard.set(favoritesArrayXAG, forKey: saveKeyXAG)
     }
 }
