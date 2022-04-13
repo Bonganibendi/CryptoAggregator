@@ -74,8 +74,7 @@ struct MarketWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MarketWidget(markets: marketData[0])
-            MarketWidget(markets: marketData[3])
-                .previewDevice("iPhone 8")
+                .previewLayout(.sizeThatFits)
         }
     }
 }

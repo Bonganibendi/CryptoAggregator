@@ -63,7 +63,7 @@ struct CryptoMarketView: View {
                         MarketWidget(markets: marketData[9])
                             .foregroundColor(.black)
                     }
-                    .navigationTitle("Market View")
+                    .navigationTitle("Crypto Markets")
                 }
             }
         }

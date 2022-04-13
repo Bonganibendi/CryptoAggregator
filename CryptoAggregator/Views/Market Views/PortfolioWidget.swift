@@ -23,8 +23,9 @@ struct PortfolioWidget: View {
                     .fontWeight(.bold)
                 
                 Text(portfolioMarket.symbol)
+                    .fontWeight(.light)
                     .foregroundColor(.secondary)
-            }
+            }.padding()
             Spacer()
         }
     }
@@ -33,5 +34,6 @@ struct PortfolioWidget: View {
 struct PortfolioWidget_Previews: PreviewProvider {
     static var previews: some View {
         PortfolioWidget(portfolioMarket: portfolioMarketData[0])
+            .previewLayout(.sizeThatFits)
     }
 }

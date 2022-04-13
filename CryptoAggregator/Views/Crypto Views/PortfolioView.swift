@@ -13,7 +13,6 @@ struct PortfolioViewUSD: View {
     @ObservedObject var favouritesUSD = FavouritesUSD()
     
     var body: some View {
-        NavigationView {
             ZStack {
                 List{
                     ForEach(viewModel.instrumentPublished,id: \.self){ crypto in
@@ -56,7 +55,6 @@ struct PortfolioViewUSD: View {
                     viewModel.fetchCryptoData()
                 }
             }.navigationBarTitle("Portfolio View USD", displayMode: .inline).offset(y: -10)
-        }
     }
 }
 

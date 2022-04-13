@@ -14,6 +14,10 @@ struct TabBarView: View {
                 Label("",systemImage: "building.columns.fill")
             }
             
+            PortfolioMarketView().tabItem {
+                Label("",systemImage: "chart.pie.fill")
+            }
+            
             SettingsView().tabItem{
                 Label("",systemImage: "gearshape.fill")
             }
