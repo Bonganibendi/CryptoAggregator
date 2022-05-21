@@ -20,10 +20,6 @@
 		F2A296CD27CFA1A100A229CE /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296CC27CFA1A100A229CE /* TabBarView.swift */; };
 		F2A296D627CFA2C200A229CE /* CryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296D527CFA2C200A229CE /* CryptoView.swift */; };
 		F2A296DD27CFA3A600A229CE /* Crypto Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */; };
-		F2A296E227CFA3D800A229CE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E127CFA3D800A229CE /* SettingsView.swift */; };
-		F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E327CFA40500A229CE /* UserWidget.swift */; };
-		F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296E927CFA44B00A229CE /* HelpView.swift */; };
-		F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A296EB27CFA46F00A229CE /* LogoutView.swift */; };
 		F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */; };
 		F2CFA2E127D79CB100BBC405 /* MarketWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */; };
 		F2CFA2E327D79FC100BBC405 /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CFA2E227D79FC100BBC405 /* MarketModel.swift */; };
@@ -44,10 +40,6 @@
 		F2A296CC27CFA1A100A229CE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		F2A296D527CFA2C200A229CE /* CryptoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoView.swift; sourceTree = "<group>"; };
 		F2A296DC27CFA3A600A229CE /* Crypto Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crypto Detail.swift"; sourceTree = "<group>"; };
-		F2A296E127CFA3D800A229CE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F2A296E327CFA40500A229CE /* UserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWidget.swift; sourceTree = "<group>"; };
-		F2A296E927CFA44B00A229CE /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
-		F2A296EB27CFA46F00A229CE /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		F2A298C527D5029C007D0FA4 /* CryptoMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketView.swift; sourceTree = "<group>"; };
 		F2CFA2E027D79CB100BBC405 /* MarketWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketWidget.swift; sourceTree = "<group>"; };
 		F2CFA2E227D79FC100BBC405 /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
@@ -127,7 +119,6 @@
 				F2A298C427D50221007D0FA4 /* Market Views */,
 				F2A296CE27CFA1C900A229CE /* Crypto Views */,
 				F2D8494627D5478D00E3D484 /* Detail View */,
-				F2A296DB27CFA36200A229CE /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,17 +130,6 @@
 				F28F20242804B0480021D596 /* PortfolioView.swift */,
 			);
 			path = "Crypto Views";
-			sourceTree = "<group>";
-		};
-		F2A296DB27CFA36200A229CE /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				F2A296E127CFA3D800A229CE /* SettingsView.swift */,
-				F2A296E927CFA44B00A229CE /* HelpView.swift */,
-				F2A296EB27CFA46F00A229CE /* LogoutView.swift */,
-				F2A296E327CFA40500A229CE /* UserWidget.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		F2A298C427D50221007D0FA4 /* Market Views */ = {
@@ -243,16 +223,12 @@
 			files = (
 				F28F20252804B0480021D596 /* PortfolioView.swift in Sources */,
 				F28F20272804B15E0021D596 /* PortfolioMarketView.swift in Sources */,
-				F2A296E427CFA40500A229CE /* UserWidget.swift in Sources */,
 				F28F201D2804A65B0021D596 /* Favourites.swift in Sources */,
 				F28F20232804ADDA0021D596 /* PortfolioWidget.swift in Sources */,
 				F2A298C627D5029C007D0FA4 /* CryptoMarketView.swift in Sources */,
 				F28F201F2804A9EA0021D596 /* PortfolioMarketModel.swift in Sources */,
-				F2A296EA27CFA44B00A229CE /* HelpView.swift in Sources */,
 				F2A296CD27CFA1A100A229CE /* TabBarView.swift in Sources */,
 				F2A296DD27CFA3A600A229CE /* Crypto Detail.swift in Sources */,
-				F2A296EC27CFA46F00A229CE /* LogoutView.swift in Sources */,
-				F2A296E227CFA3D800A229CE /* SettingsView.swift in Sources */,
 				F2A296BD27CFA10B00A229CE /* CryptoAggregatorApp.swift in Sources */,
 				F2CFA2E127D79CB100BBC405 /* MarketWidget.swift in Sources */,
 				F2CFA2E327D79FC100BBC405 /* MarketModel.swift in Sources */,

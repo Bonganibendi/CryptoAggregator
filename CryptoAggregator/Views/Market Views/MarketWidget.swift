@@ -56,7 +56,7 @@ struct MarketWidget: View {
                         }
                         VStack(alignment:.leading){
                             Text("Instruments")
-                                .font(.headline)
+                                .font(.subheadline)
                                 .fontWeight(.heavy)
                             Text("\(markets.assets)")
                         }

@@ -18,9 +18,6 @@ struct TabBarView: View {
                 Label("",systemImage: "chart.pie.fill")
             }
             
-            SettingsView().tabItem{
-                Label("",systemImage: "gearshape.fill")
-            }
         }
     }
 }
