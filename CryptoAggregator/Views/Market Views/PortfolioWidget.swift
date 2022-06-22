@@ -20,11 +20,12 @@ struct PortfolioWidget: View {
             
             VStack(alignment: .leading) {
                 Text(portfolioMarket.region)
-                    .fontWeight(.bold)
+                    .fontWeight(.bold).foregroundColor(Color("Gold2"))
+                    
                 
                 Text(portfolioMarket.symbol)
                     .fontWeight(.light)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("Gold2"))
             }.padding()
             Spacer()
         }

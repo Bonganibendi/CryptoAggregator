@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct PortfolioMarketView: View {
+    
+    init(){
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color("Gold2"))]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.init(Color("Gold2"))]
+    }
+    
     var body: some View {
         NavigationView {
             List {

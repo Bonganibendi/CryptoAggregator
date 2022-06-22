@@ -17,7 +17,7 @@ struct MarketWidget: View {
                 .frame(height: 220, alignment: .center)
                 .cornerRadius(10)
                 .padding(.horizontal, 5)
-                .foregroundColor(.gray)
+                .foregroundColor(Color("Blue"))
             
             HStack {
                 //MARK: Broker Details.
@@ -26,6 +26,7 @@ struct MarketWidget: View {
                     Text(markets.symbol).font(.system(size: 20))
                         .fontWeight(.heavy).lineLimit(1)
                         .minimumScaleFactor(0.5)
+                        .foregroundColor(Color("Gold"))
                         
                     Image(markets.imageName)
                         .resizable()
@@ -35,7 +36,7 @@ struct MarketWidget: View {
                 }.padding(.horizontal,30)
                 
                 RoundedRectangle(cornerRadius: 5)
-                    .frame(width: 1, height: 180).offset(x:-10)
+                    .frame(width: 1, height: 180).offset(x:-10).foregroundColor(Color("Gold"))
                 
                 // MARK: Data from Brokers.
                 
@@ -45,20 +46,26 @@ struct MarketWidget: View {
                             Text("Region")
                                 .font(.headline)
                                 .fontWeight(.heavy)
+                                .foregroundColor(Color("Gold"))
                             Text(markets.region)
+                                .foregroundColor(Color("Gold"))
                         }
                         
                         VStack(alignment:.leading){
                             Text("Exchange")
                                 .font(.headline)
                                 .fontWeight(.heavy)
+                                .foregroundColor(Color("Gold"))
                             Text(markets.exchange)
+                                .foregroundColor(Color("Gold"))
                         }
                         VStack(alignment:.leading){
                             Text("Instruments")
                                 .font(.subheadline)
                                 .fontWeight(.heavy)
+                                .foregroundColor(Color("Gold"))
                             Text("\(markets.assets)")
+                                .foregroundColor(Color("Gold"))
                         }
                     }
                     Spacer()
