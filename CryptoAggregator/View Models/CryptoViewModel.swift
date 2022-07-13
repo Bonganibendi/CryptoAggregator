@@ -15,7 +15,7 @@ class CryptoViewModelUSD: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -60,7 +60,7 @@ class CryptoViewModelEUR: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -105,7 +105,7 @@ class CryptoViewModelAUD: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -150,7 +150,7 @@ class CryptoViewModelSGD: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=sgd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=sgd&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -195,7 +195,7 @@ class CryptoViewModelBRL: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -240,7 +240,7 @@ class CryptoViewModelZAR: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=zar&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=zar&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -285,7 +285,7 @@ class CryptoViewModelINR: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -330,7 +330,7 @@ class CryptoViewModelJPY: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=jpy&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=jpy&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -375,7 +375,7 @@ class CryptoViewModelXAU: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=xau&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=xau&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
@@ -420,7 +420,7 @@ class CryptoViewModelXAG: ObservableObject {
     
     func fetchCryptoData() {
         //MARK: Creating URL Object.
-        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=xag&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
+        let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=xag&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C1y")
          
          //MARK: Creating URL Object.
          var request = URLRequest(url: url!)
