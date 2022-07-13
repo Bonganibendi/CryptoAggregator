@@ -21,7 +21,6 @@ struct CryptoViewUSD: View {
                     NavigationLink(destination: CryptoDetail(instrument: crypto)) {
                         HStack(spacing: 10) {
                             
-                            
                             urlImage(urlString: crypto.image!, data: nil)
                                 .frame(width: 40, height: 40)
                                 .cornerRadius(10)

@@ -46,8 +46,6 @@ struct Instrument : Codable, Hashable {
         case sparkLine7D = "sparkline_in_7d"
         case lastUpdated = "last_updated"
     }
-
-
 }
 //MARK: - Sparkline Object
 
