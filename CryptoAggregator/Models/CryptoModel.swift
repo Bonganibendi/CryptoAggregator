@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct Instrument : Codable, Hashable {
+    
     let id : String?
     let symbol : String?
     let name : String?
@@ -23,6 +24,8 @@ struct Instrument : Codable, Hashable {
     let dailyChange : Double?
     let monthlyChange : Double?
     let weeklyChange : Double?
+    let sparkLine7D : sparkline_in_7d?
+    let lastUpdated : String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -40,7 +43,14 @@ struct Instrument : Codable, Hashable {
         case dailyChange = "price_change_percentage_24h_in_currency"
         case monthlyChange = "price_change_percentage_30d_in_currency"
         case weeklyChange = "price_change_percentage_7d_in_currency"
+        case sparkLine7D = "sparkline_in_7d"
+        case lastUpdated = "last_updated"
     }
 
 
+}
+//MARK: - Sparkline Object
+
+struct sparkline_in_7d: Codable, Hashable {
+    let price: [Double]?
 }
