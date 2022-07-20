@@ -2,7 +2,7 @@
 
 # CryptoAggregator
 
-A SwiftUi app allows you to monitor and aggregate the price of cryptocurrencies in different base currencies such as South African Rands, Indian Rupees, Silver and Gold.  
+A SwiftUi app that allows you to monitor and aggregate the price of cryptocurrencies in different base currencies such as South African Rands, Indian Rupees, Silver and Gold.  
 
 # Skills Acquired from Project 
 
