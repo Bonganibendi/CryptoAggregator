@@ -6,12 +6,13 @@ A SwiftUi app allows you to monitor and aggregate the price of cryptocurrencies 
 
 # Skills Acquired from Project 
 
-- Wireframing & UX/Ui design 
+- Wireframing & UX/UI design 
 - Architecting a project from the beginning 
 - Model View Controller design pattern 
 - Accessing an API endpoint from CoinGecko and parsing JSON 
 - Utilising the swift package manager
 - Persisting data for a user
+- Intermediate SwitfUi features such as user defaults, searchable function etc. 
 
 # User Interface 
 
