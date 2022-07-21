@@ -18,4 +18,4 @@ A SwiftUi app that allows you to monitor and aggregate the price of cryptocurren
 
 ![Ui](https://user-images.githubusercontent.com/58882596/180040965-a408c48c-d787-4bc5-a411-473239f016d4.jpg)
 
-
+An excerpt of the views in the project.
